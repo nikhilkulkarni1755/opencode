@@ -69,7 +69,7 @@ export interface Interface {
       identifier: string
       whenToUse: string
       systemPrompt: string
-    },
+      },
     Provider.DefaultModelError
   >
 }

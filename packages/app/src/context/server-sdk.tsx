@@ -148,10 +148,6 @@ function createServerSdkContext(server: ServerConnection.Any) {
             resetHeartbeat()
             streamErrorLogged = false
             const directory = event.directory ?? "global"
-            if (event.payload.type === "sync") {
-              continue
-            }
-
             const payload = event.payload as Event
 
             const k = key(directory, payload)

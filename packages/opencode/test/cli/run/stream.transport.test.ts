@@ -339,11 +339,11 @@ function child(id: string): SessionChild {
   }
 }
 
-function globalEvent(payload: GlobalEvent["payload"]): GlobalEvent {
+function globalEvent(payload: unknown): GlobalEvent {
   return {
     directory: "/tmp",
     project: "project-1",
-    payload,
+    payload: payload as GlobalEvent["payload"],
   }
 }
 

@@ -12,7 +12,8 @@ export function useEvent() {
 
   function subscribe(handler: (event: Event, metadata: EventMetadata) => void) {
     return sdk.event.on("event", (event) => {
-      if (event.payload.type === "sync") {
+      const type = Reflect.get(event.payload, "type") as string | undefined
+      if (typeof type === "string" && type === "sync") {
         return
       }
 
